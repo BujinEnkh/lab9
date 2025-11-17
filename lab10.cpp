@@ -39,9 +39,9 @@ public:
         elements[currentSize++] = element;    // элемент нэмээд size өсгөнө
     }
 
-    int size() const { return currentSize; }   // одоогийн хэмжээ
+    int length() const { return currentSize; }   // одоогийн хэмжээ
 
-    T &operator[](int index) {      // аль элементирүү индексаар хандахыг харуулах
+    T &operator[](int index) {      // аль элемент рүү индексаар хандах
         if (index >= currentSize) throw out_of_range("Index out of range");
         return elements[index];
     }
@@ -157,7 +157,7 @@ bool compareByArea(shape *a, shape *b) {
 }
 
 int main() {
-    srand(time(0));
+    srand(time(0));   // random seed
 
     List<_2Dshape *> a;   // shape pointer-үүдийн лист
 
@@ -169,7 +169,7 @@ int main() {
         else if (k == 2) a.add(new Triangle("Triangle", c));
         else if (k == 3) a.add(new Square("Square", c));
 
-        a[a.size() - 1]->calculate_area(); // талбайг дуудаж авна
+        a[a.length() - 1]->calculate_area(); // талбайг дуудаж авна
     }
 
     cout << "Unsorted:\n";
